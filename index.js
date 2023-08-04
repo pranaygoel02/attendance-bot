@@ -1,4 +1,4 @@
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-core");
 const Tesseract = require("tesseract.js");
 const fs = require("fs").promises;
 
@@ -48,7 +48,8 @@ const password = "Pranayg02$";
 
 (async () => {
   const browser = await puppeteer.launch({
-    headless: false,
+    executablePath: 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe', // Use the default system-installed browser
+    headless: false, // Adjust as needed
     // slowMo: 250 // slow down by 250ms
   });
   const browserContext = browser.defaultBrowserContext();
